@@ -8,7 +8,10 @@
     <title>index</title>
     <link rel="stylesheet" href="css/style.css">
     <script>
-        alert("Olá, seja bem-vindo!");
+        function bemvindo(){
+            alert("Olá, seja bem-vindo!");
+
+        }
 
         function validaNome() {
             nome = document.getElementById("txtNome").value;
@@ -17,7 +20,7 @@
 
 
 
-            if (vet.length > 1 && vet != "") {
+            if (vet.length >=2 && vet != "") {
                 localStorage.setItem("text", nome);
                 window.open('menu.html', '_self');
             }
@@ -29,7 +32,7 @@
     </script>
 </head>
 
-<body>
+<body onload="bemvindo()">
     <fieldset>
         <legend>Acesso ao Sistema</legend>
         <label for="">Nome completo:</label>
