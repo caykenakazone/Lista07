@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>index</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script>
+        alert("Olá, seja bem-vindo!");
+
+        function validaNome() {
+            nome = document.getElementById("txtNome").value;
+            let vet = [];
+            vet = nome.split(" ");
+
+
+
+            if (vet.length > 1 && vet != "") {
+                localStorage.setItem("text", nome);
+                window.open('menu.html', '_self');
+            }
+            else {
+                alert("Nome incorreto, insira um nome válido")
+            }
+
+        }
+    </script>
+</head>
+
+<body>
+    <fieldset>
+        <legend>Acesso ao Sistema</legend>
+        <label for="">Nome completo:</label>
+        <input type="text" id="txtNome">
+        <br><br>
+        <input type="button" value="Entrar" onclick="validaNome()">
+    </fieldset>
+</body>
+
+</html>

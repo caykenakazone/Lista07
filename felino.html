@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Felino</title>
+    <style>
+        .container {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+        }
+
+        .container>div {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 170px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        img {
+            width: 100px;
+        }
+
+        p {
+            text-align: center;
+
+
+        }
+
+        input[type="button"] {
+            background-color: darkred;
+            border: 0px;
+            width: 150px;
+            height: 25px;
+            border-radius: 5px;
+            color: white;
+
+        }
+        input[type="text"]{
+            border-radius: 10px;
+        }
+        .carinhos{
+            margin-top: -10px;
+        }
+    </style>
+    <script>
+        nome = localStorage.getItem("text");
+        vet = []
+        vet = nome.split(" ");
+        let carinhos = 0;
+
+        function gato01() {
+            alert(`Oi ${vet}, tudo bem com você?`)
+        }
+        function gato02() {
+            carinhos++;
+            document.getElementById("carinhos").innerHTML = `Carinhos: ${carinhos}`
+        }
+        function gato03() {
+            document.getElementById("img").innerHTML = img.src = "Imagens/gato06.gif"
+        }
+        function gato03_2() {
+            document.getElementById("img").innerHTML = img.src = "Imagens/gato03.gif"
+        }
+        function gato04() {
+            document.getElementById("gato04").innerHTML = "Ai, pare de fazer cócegas!"
+        }
+        function gato04_2() {
+            document.getElementById("gato04").innerHTML = "lá lá lá lá lá"
+
+        }
+        let num;
+        function gato05() {
+            num = Math.floor(Math.random() * (100 - 0 + 1) + 1);
+            document.getElementById("gato05").value = num
+        }
+
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <div>
+            <img src="Imagens/gato01.gif" alt="" onclick="gato01()">
+            <p>Clique em mim!</p>
+        </div>
+        <div>
+            <img src="Imagens/gato02.gif" alt="" onclick="gato02()">
+            <p>Clique sobre mim várias vezes!</p>
+            <p id="carinhos" class="carinhos">Carinhos: 0</p>
+        </div>
+        <div>
+            <img id="img" src="Imagens/gato03.gif" alt="" onmouseover="gato03()" onmouseout="gato03_2()">
+            <p>Passe o mouse sobre mim!</p>
+        </div>
+        <div>
+            <img src="Imagens/gato04.gif" alt="" onmouseover="gato04()" onmouseout="gato04_2()">
+            <p id="gato04">lá lá lá lá lá</p>
+        </div>
+        <div>
+            <img src="Imagens/gato05.gif" alt="">
+            <br>
+            <input type="button" value="Gerar números da sorte" onclick="gato05()">
+            <br>
+            <input type="text" id="gato05">
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>menu</title>
+
+    <style>
+        input[type="button"] {
+    background-color: green;
+    border: 0px;
+    width: 400px;
+    height: 35px;
+    border-radius: 5px;
+    color: white;   
+
+}
+        p{
+    color: green;
+    font-size: 30px;
+    font-weight: bold;
+    margin: auto;
+    text-align: center;
+    }
+    body{
+    text-align: center;
+    }
+    </style>
+    <script>
+        nome = localStorage.getItem("text");
+        vet = []
+        vet = nome.split(" ");
+
+
+
+        function getTextHome() {
+            document.getElementById("txtHome").innerHTML = `${vet[0]} ${vet[vet.length-1]}, seja bem-vindo ao jogo dos Felinos! `
+        }
+
+        function trocarpag(){
+            window.open('felino.html','_self');
+        }
+        
+
+        
+    </script>
+</head>
+<body onload="getTextHome()">
+    <p id="txtHome"></p>
+    <br><br>
+    <input type="button" value="Entrar como convidado" onclick="trocarpag()">
+</body>
+</html>
